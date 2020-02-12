@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _animation = "idle";
+  String _animation = "2";
 
   void doAnimate(String anim) {
     setState(() {
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //flare actor
           Expanded(
             child: FlareActor(
-              "images/minion.flr",
+              "images/Control_face_test.flr",
               alignment: Alignment.center,
               fit: BoxFit.contain,
               animation: _animation,
@@ -57,42 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                child: Text("Look"),
+                child: Text("Move"),
                 onPressed: () {
-                  doAnimate("Look");
+                  doAnimate("1");
                 },
               ),
-              RaisedButton(
-                child: Text("Dance"),
-                onPressed: () {
-                  doAnimate("Dance");
-                },
-              ),
-              RaisedButton(
-                child: Text("Stand"),
-                onPressed: () {
-                  doAnimate("Stand");
-                },
-              )
+
+
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              RaisedButton(
-                child: Text("Jump"),
-                onPressed: () {
-                  doAnimate("Jump");
-                },
-              ),
-              RaisedButton(
-                child: Text("Wave"),
-                onPressed: () {
-                  doAnimate("Wave");
-                },
-              )
-            ],
-          )
+
         ],
       ),
     );
